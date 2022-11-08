@@ -1,9 +1,10 @@
-import './App.css';
-
+import Header from './components/header/header';
+import StoreFront from './components/storefront';
 function App() {
   return (
     <div className="App">
-      <h1>Proof Of Life</h1>
+      <Header />
+      <StoreFront/>
     </div>
   );
 }
