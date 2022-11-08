@@ -1,12 +1,17 @@
 import Header from './components/header/header';
-import StoreFront from './components/storefront';
+import Categories from './components/storefront/categories';
+import Products from './components/storefront/products';
+import Footer from './components/footer/footer';
+
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-      <StoreFront/>
-    </div>
-  );
+      <Categories />
+      <Products />
+      <Footer />
+    </>
+  )
 }
 
 export default App;

@@ -1,18 +1,19 @@
-import { AppBar, Toolbar, IconButton, Typography} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Toolbar, Button, Stack, Typography } from '@mui/material';
 
 function Header() {
   return (
-<AppBar position="static">
-  <Toolbar variant="dense">
-    <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-      <MenuIcon />
-    </IconButton>
-    <Typography variant="h6" color="inherit" component="div">
-      Our Store
-    </Typography>
-  </Toolbar>
-</AppBar>
+    <AppBar position="static" color="inherit">
+      <Toolbar variant="dense">
+        <Stack direction="row" spacing={2}>
+          <Typography variant="h6" color="inherit" component="div">
+            Our Store
+          </Typography>
+          <Button color="inherit" variant="contained">
+            Cart (0)
+          </Button>
+        </Stack>
+      </Toolbar>
+    </AppBar>
   );
 }
 
