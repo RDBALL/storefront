@@ -8,7 +8,7 @@ function Header() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Typography gutterBottom="true" variant="h4" color="inherit" component="div">
+        <Typography variant="h4" color="inherit" component="div">
           OUR STORE
         </Typography>
         <Toolbar variant="dense">
