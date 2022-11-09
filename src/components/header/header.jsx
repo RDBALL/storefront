@@ -3,16 +3,20 @@ import { AppBar, Toolbar, Button, Stack, Typography } from '@mui/material';
 function Header() {
   return (
     <AppBar position="static" color="inherit">
-      <Toolbar variant="dense">
-        <Stack direction="row" spacing={2}>
-          <Typography variant="h6" color="inherit" component="div">
-            Our Store
-          </Typography>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Typography gutterBottom="true" variant="h4" color="inherit" component="div">
+          OUR STORE
+        </Typography>
+        <Toolbar variant="dense">
           <Button color="inherit" variant="contained">
             Cart (0)
           </Button>
-        </Stack>
-      </Toolbar>
+        </Toolbar>
+      </Stack>
     </AppBar>
   );
 }
