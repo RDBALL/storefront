@@ -18,7 +18,7 @@ const initialState = {
     },
     {
       normalized: 'weapons',
-      display: 'Weapons',
+      display: 'WEAPONS',
       description: 'Category Description Goes Here',
     },
   ]
