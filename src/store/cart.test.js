@@ -20,6 +20,9 @@ test('Cart item quantity increases when an item is added to cart', () => {
   let cartQuantity = screen.getByText('Quantity: 1')
   expect(cartQuantity).toBeInTheDocument();
 
+  let productAddedToCart = screen.getByTestId('productInCart')
+  expect(productAddedToCart).toBeInTheDocument();
+
   const removeItemButton = screen.getByTestId('removeItemFromCartButton')
   fireEvent.click(removeItemButton);
 

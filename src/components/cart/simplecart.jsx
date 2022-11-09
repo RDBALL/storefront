@@ -19,7 +19,7 @@ const SimpleCart = (props) => {
         {
           props.cart.productList.map(product => (
             <Box key={product.id}>
-              <Typography variant="h5" component="div">{product.display}</Typography>
+              <Typography data-testid="productInCart" variant="h5" component="div">{product.display}</Typography>
               <Typography variant="body2" color="text.secondary">Quantity: {product.amountInCart}</Typography>
               <Button data-testid="removeItemFromCartButton"variant="contained" size="small" onClick={() => removeFromCart(product)}>Remove</Button>
             </Box>
