@@ -5,14 +5,14 @@ import App from '../App';
 test('Cart item quantity increases when an item is added to cart', () => {
   render(<App />);
 
-  let qtyDisplay = screen.getByText('CART(0)')
-  expect(qtyDisplay).toBeInTheDocument();
+  let currentItemsInCart = screen.getByText('CART(0)')
+  expect(currentItemsInCart).toBeInTheDocument();
 
   const addToCartButton = screen.getByTestId('addToCartButton')
   fireEvent.click(addToCartButton);
 
-  qtyDisplay = screen.getByText('CART(1)')
-  expect(qtyDisplay).toBeInTheDocument();
+  currentItemsInCart = screen.getByText('CART(1)')
+  expect(currentItemsInCart).toBeInTheDocument();
 
   const toggleCartDropdown = screen.getByTestId('cartToggleButton')
   fireEvent.click(toggleCartDropdown);

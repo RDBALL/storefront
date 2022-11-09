@@ -14,7 +14,7 @@ function Categories(props) {
       <Typography variant="h5">Browse Our Categories</Typography>
       <TabContext value={props.categories.active}>
         <Box>
-          <TabList onChange={handleChange}>
+          <TabList data-testid="productCategorySelector" onChange={handleChange}>
             {
               props.categories.categories.map(category => {
                 return <Tab label={category.display} value={category.normalized} key={category.normalized} />
