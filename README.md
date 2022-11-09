@@ -4,6 +4,12 @@
 
 ### An ecommerce storefront using React with Redux
 
+Attribution: 
+
+[401d48 In class Demo](https://github.com/codefellows/seattle-code-javascript-401d48/tree/main/class-37/inclass-demo) 
+
+[401d50 Code Review](https://github.com/codefellows/seattle-javascript-401d50/tree/main/class-37/review/storefront)
+
 ---
 
 ### Phase 2 live on [codesandbox.io](https://codesandbox.io/p/github/RDBALL/storefront/lab37?workspace=%257B%2522activeFileId%2522%253Anull%252C%2522openFiles%2522%253A%255B%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522sidekickItems%2522%253A%255B%257B%2522key%2522%253A%2522cla9b38jf0007356ivsr21n0d%2522%252C%2522type%2522%253A%2522PROJECT_SETUP%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522start%2522%252C%2522port%2522%253A3000%252C%2522key%2522%253A%2522cla99rcqt00i7356h14npzgr0%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522TASK_LOG%2522%252C%2522taskId%2522%253A%2522start%2522%252C%2522key%2522%253A%2522cla99r8uv00g6356hk7vwpjar%2522%252C%2522isMinimized%2522%253Afalse%257D%255D%257D)
