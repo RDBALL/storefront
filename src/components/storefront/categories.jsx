@@ -1,23 +1,24 @@
 import { Typography, Box, Tab, Container } from '@mui/material';
 import { TabContext, TabList } from '@mui/lab'
-import store from './../../store';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-function Categories(props) {
+function Categories() {
+  const dispatch = useDispatch();
+  const categories = useSelector(state => state.categories);
 
   const handleChange = (e, newValue) => {
-    store.dispatch({ type: newValue });
+    dispatch({type: newValue});
   }
 
   return (
     <Container>
       <Typography variant="h5">Browse Our Categories</Typography>
-      <TabContext value={props.categories.active}>
+      <TabContext value={categories.active}>
         <Box>
           <TabList data-testid="productCategorySelector" onChange={handleChange}>
             {
-              props.categories.categories.map(category => {
-                return <Tab label={category.display} value={category.normalized} key={category.normalized} />
+              categories.categories.map(category => {
+                return <Tab label={category.name} value={category.name} key={category._id} />
               })
             }
           </TabList>
@@ -27,8 +28,4 @@ function Categories(props) {
   )
 }
 
-const mapStateToProps = (state) => ({
-  categories: state.categories
-});
-
-export default connect(mapStateToProps)(Categories);
+export default Categories;

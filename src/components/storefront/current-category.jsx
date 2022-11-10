@@ -1,22 +1,18 @@
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Typography } from "@mui/material";
 
+function CurrentCategory() {
+  const categories = useSelector(state => state.categories).categories;
+  const active = useSelector(state => state.categories).active;
 
-function CurrentCategory(props) {
-  const activeCategory = props.categories.categories.find(category => {
-    return category.normalized === props.categories.active;
-  })
+  const activeCategory = categories.find(category => category.name === active);
 
   return (
     <>
-      <Typography variant="h2">{activeCategory.display}</Typography>
+      <Typography variant="h2">{activeCategory.name}</Typography>
       <Typography variant="h5">{activeCategory.description}</Typography>
       </>
   )
 }
 
-const mapStateToProps = (state) => ({
-  categories: state.categories
-});
-
-export default connect(mapStateToProps)(CurrentCategory);
+export default CurrentCategory;

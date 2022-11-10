@@ -1,10 +1,15 @@
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Container} from '@mui/material'
 import store from './../../store';
 
-function Products(props) {
+function Products() {
 
-  const displayList = props.products.filter(product => product.category === props.categories.active);
+  const products = useSelector(state => state.products).products;
+  const categories = useSelector(state => state.categories);
+
+  const displayList = categories.active === 'all' ? products :
+  products.filter(product => product.category === categories.active);
+
 
   const addToCart = (product) => {
       store.dispatch({ type: 'add_product', payload: { product }});
@@ -14,12 +19,12 @@ function Products(props) {
     <Container>
       {
         displayList.map(product => (
-          <Card sx={{ maxWidth: 350 }} key={product.id}>
+          <Card sx={{ maxWidth: 350 }} key={product._id}>
           <CardMedia
             component="img"
             height="150"
             image={product.img}
-            alt="product"
+            alt={product.name}
           />
           <CardContent>
             <Typography variant="h5" component="div">{product.display}</Typography>
@@ -36,9 +41,4 @@ function Products(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  categories: state.categories,
-  products: state.products.products,
-});
-
-export default connect(mapStateToProps)(Products);
+export default Products;

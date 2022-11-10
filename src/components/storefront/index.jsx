@@ -1,13 +1,20 @@
 import Categories from "./categories";
 import CurrentCategory from "./current-category";
 import Products from "./products";
+import { useSelector } from "react-redux";
 
 function StoreFront() {
+  const categories = useSelector(state => state.categories);
   return (
     <>
-      <Categories />
-      <CurrentCategory />
-      <Products/>
+      {
+        categories.categories.length !== 0 &&
+        <>
+          <Categories />
+          <CurrentCategory />
+          <Products />
+        </>
+      }
     </>
   )
 }
