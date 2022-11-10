@@ -26,7 +26,7 @@ function Products(props) {
             <Typography variant="body2" color="text.secondary">{product.description}</Typography>
           </CardContent>
           <CardActions>
-            <Button variant="contained" size="small" onClick={() => addToCart(product)}>Add To Cart</Button>
+            <Button data-testid="addToCartButton" variant="contained" size="small" onClick={() => addToCart(product)}>Add To Cart</Button>
             <Button variant="contained" size="small">View Details</Button>
           </CardActions>
         </Card>

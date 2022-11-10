@@ -12,16 +12,16 @@ const SimpleCart = (props) => {
   return (
     <>
       <Container>
-        <Button variant="contained" color="inherit" onClick={() => setShow(prev => !prev)} >Cart({props.cart.numberOfItems})</Button>
+        <Button data-testid="cartToggleButton" variant="contained" color="inherit" onClick={() => setShow(prev => !prev)} >CART({props.cart.numberOfItems})</Button>
       </Container>
       <div id='cartItems'>
       {show && <Container id='cartItemContainer'>
         {
           props.cart.productList.map(product => (
             <Box key={product.id}>
-              <Typography variant="h5" component="div">{product.display}</Typography>
+              <Typography data-testid="productInCart" variant="h5" component="div">{product.display}</Typography>
               <Typography variant="body2" color="text.secondary">Quantity: {product.amountInCart}</Typography>
-              <Button variant="contained" size="small" onClick={() => removeFromCart(product)}>Remove</Button>
+              <Button data-testid="removeItemFromCartButton"variant="contained" size="small" onClick={() => removeFromCart(product)}>Remove</Button>
             </Box>
           ))
         }
