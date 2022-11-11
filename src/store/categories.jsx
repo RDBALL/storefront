@@ -1,27 +1,6 @@
 const initialState = {
   active: 'food',
-  categories: [
-    // {
-    //   normalized: 'food',
-    //   display: 'FOOD',
-    //   description: 'Category Description Goes Here',
-    // },
-    // {
-    //   normalized: 'electronics',
-    //   display: 'ELECTRONICS',
-    //   description: 'Category Description Goes Here',
-    // },
-    // {
-    //   normalized: 'games',
-    //   display: 'GAMES',
-    //   description: 'Category Description Goes Here',
-    // },
-    // {
-    //   normalized: 'weapons',
-    //   display: 'WEAPONS',
-    //   description: 'Category Description Goes Here',
-    // },
-  ]
+  categories: []
 }
 
 const reducer = (state = initialState, action) => {

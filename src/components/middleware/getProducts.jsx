@@ -13,7 +13,6 @@ const getRequest = async (endpoint) => {
       method: 'get',
       url: `https://api-js401.herokuapp.com/api/v1/${endpoint}`,
     });
-    console.log(response.data);
     return response.data.results;
 
   } catch (e) { console.log(e) }

@@ -23,12 +23,13 @@ function Products() {
           <CardMedia
             component="img"
             height="150"
-            image={product.img}
+            image={`https://source.unsplash.com/random?${product.name}`}
             alt={product.name}
           />
           <CardContent>
-            <Typography variant="h5" component="div">{product.display}</Typography>
-            <Typography variant="body2" color="text.secondary">{product.description}</Typography>
+            <Typography variant="h5" component="div">{product.name}</Typography>
+            <Typography variant="body2" color="text.secondary">Price: ${product.price}</Typography>
+            <Typography variant="body2" color="text.secondary">In Stock Quantity: {product.inStock}</Typography>
           </CardContent>
           <CardActions>
             <Button data-testid="addToCartButton" variant="contained" size="small" onClick={() => addToCart(product)}>Add To Cart</Button>
