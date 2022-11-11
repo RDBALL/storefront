@@ -1,8 +1,9 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Container} from '@mui/material'
 import store from './../../store';
 
 function Products() {
+  const dispatch = useDispatch();
 
   const products = useSelector(state => state.products).products;
   const categories = useSelector(state => state.categories);
@@ -10,10 +11,13 @@ function Products() {
   const displayList = categories.active === 'all' ? products :
   products.filter(product => product.category === categories.active);
 
-
   const addToCart = (product) => {
-      store.dispatch({ type: 'add_product', payload: { product }});
-  }
+    if (product.inStock >= 1) {
+      dispatch({ type: 'add_product', payload: { product } });
+      const updatedProduct = products.find(currProduct => currProduct._id === product._id);
+      updatedProduct.inStock--;
+      dispatch({type: 'update_product', payload: updatedProduct});
+  }}
 
   return (
     <Container>
